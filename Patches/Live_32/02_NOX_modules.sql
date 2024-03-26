@@ -65,11 +65,11 @@ END
 IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'nox_shield_absorbtion_modifier')
 BEGIN
 	INSERT INTO aggregatefields (name, formula, measurementunit, measurementmultiplier, measurementoffset, category, digits, moreisbetter, usedinconfig, note) VALUES
-	('nox_shield_absorbtion_modifier', 2,'nox_shield_absorbtion_modifier_unit', 100, -100, 6, 2, 1, 1, 'NOX shield negation effect')
+	('nox_shield_absorbtion_modifier', 0,'nox_shield_absorbtion_modifier_unit', 100, -100, 6, 2, 1, 1, 'NOX shield negation effect')
 END
 ELSE
 BEGIN
-	UPDATE aggregatefields SET formula = 2 WHERE name = 'nox_shield_absorbtion_modifier'
+	UPDATE aggregatefields SET formula = 0 WHERE name = 'nox_shield_absorbtion_modifier'
 END
 
 IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'nox_shield_absorbtion_modifier_enhancer')
@@ -87,17 +87,21 @@ END
 IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'nox_repair_amount_modifier')
 BEGIN
 	INSERT INTO aggregatefields (name, formula, measurementunit, measurementmultiplier, measurementoffset, category, digits, moreisbetter, usedinconfig, note) VALUES
-	('nox_repair_amount_modifier', 2,'nox_repair_amount_modifier_unit', 100, -100, 6, 2, 1, 1, 'NOX repair negation effect')
+	('nox_repair_amount_modifier', 0,'nox_repair_amount_modifier_unit', 100, -100, 6, 2, 1, 1, 'NOX repair negation effect')
 END
 ELSE
 BEGIN
-	UPDATE aggregatefields SET formula = 2 WHERE name = 'nox_repair_amount_modifier'
+	UPDATE aggregatefields SET formula = 0 WHERE name = 'nox_repair_amount_modifier'
 END
 
 IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'nox_repair_amount_modifier_enhancer')
 BEGIN
 	INSERT INTO aggregatefields (name, formula, measurementunit, measurementmultiplier, measurementoffset, category, digits, moreisbetter, usedinconfig, note) VALUES
 	('nox_repair_amount_modifier_enhancer', 0,'nox_repair_amount_modifier_enhancer_unit', 100, -100, 6, 2, 1, 1, 'NOX repair negation effect enhancer')
+END
+ELSE
+BEGIN
+	UPDATE aggregatefields SET formula = 0 WHERE name = 'nox_repair_amount_modifier_enhancer'
 END
 
 IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'default_nox_effect_radius')
@@ -123,19 +127,31 @@ GO
 IF NOT EXISTS (SELECT 1 FROM effectcategories WHERE name = 'effcat_nox_effect_shield_negation')
 BEGIN
 	INSERT INTO effectcategories (name, flag, maxlevel, note) VALUES
-	('effcat_nox_effect_shield_negation', 47, 0, 'Nox effect shield negation')
+	('effcat_nox_effect_shield_negation', 47, 1, 'Nox effect shield negation')
+END
+ELSE
+BEGIN
+	UPDATE effectcategories SET maxlevel = 1 WHERE name = 'effcat_nox_effect_shield_negation'
 END
 
 IF NOT EXISTS (SELECT 1 FROM effectcategories WHERE name = 'effcat_nox_effect_repair_negation')
 BEGIN
 	INSERT INTO effectcategories (name, flag, maxlevel, note) VALUES
-	('effcat_nox_effect_repair_negation', 48, 0, 'Nox effect repair negation')
+	('effcat_nox_effect_repair_negation', 48, 1, 'Nox effect repair negation')
+END
+ELSE
+BEGIN
+	UPDATE effectcategories SET maxlevel = 1 WHERE name = 'effcat_nox_effect_repair_negation'
 END
 
 IF NOT EXISTS (SELECT 1 FROM effectcategories WHERE name = 'effcat_nox_effect_teleport_negation')
 BEGIN
 	INSERT INTO effectcategories (name, flag, maxlevel, note) VALUES
-	('effcat_nox_effect_teleport_negation', 49, 0, 'Nox effect teleport negation')
+	('effcat_nox_effect_teleport_negation', 49, 1, 'Nox effect teleport negation')
+END
+ELSE
+BEGIN
+	UPDATE effectcategories SET maxlevel = 1 WHERE name = 'effcat_nox_effect_teleport_negation'
 END
 
 GO
@@ -153,7 +169,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE effects SET effectcategory = @effectCategory WHERE name = 'nox_effect_shield_negation'
+	UPDATE effects SET effectcategory = @effectCategory, duration = 0 WHERE name = 'nox_effect_shield_negation'
 END
 
 SET @effectCategory = 281474976710656
@@ -165,7 +181,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE effects SET effectcategory = @effectCategory WHERE name = 'nox_effect_repair_negation'
+	UPDATE effects SET effectcategory = @effectCategory, duration = 0 WHERE name = 'nox_effect_repair_negation'
 END
 
 SET @effectCategory = 562949953421312
@@ -177,7 +193,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE effects SET effectcategory = @effectCategory WHERE name = 'nox_effect_teleport_negation'
+	UPDATE effects SET effectcategory = @effectCategory, duration = 0 WHERE name = 'nox_effect_teleport_negation'
 END
 
 ---- Add new extensions category
@@ -216,11 +232,11 @@ SET @targetProperty = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_sh
 IF NOT EXISTS (SELECT 1 FROM extensions WHERE extensionname = 'ext_nox_shield_negation')
 BEGIN
 	INSERT INTO extensions (extensionid, extensionname, category, rank, learningattributeprimary, bonus, note, price, active, description, targetPropertyID, effectenhancer, hidden, freezelimit) VALUES
-	(378, 'ext_nox_shield_negation', @extensionsCategory, 5, 'attributeA', -0.03, 'Increases NOX shield negation effect', 125000, 1, 'ext_nox_shield_negation_desc', @targetProperty, 1, 0, 7)
+	(378, 'ext_nox_shield_negation', @extensionsCategory, 5, 'attributeA', -0.05, 'Increases NOX shield negation effect', 125000, 1, 'ext_nox_shield_negation_desc', @targetProperty, 1, 0, 7)
 END
 ELSE
 BEGIN
-	UPDATE extensions SET bonus = -0.03 WHERE extensionname = 'ext_nox_shield_negation'
+	UPDATE extensions SET bonus = -0.05 WHERE extensionname = 'ext_nox_shield_negation'
 END
 
 SET @targetProperty = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_repair_amount_modifier_enhancer')
@@ -228,11 +244,11 @@ SET @targetProperty = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_re
 IF NOT EXISTS (SELECT 1 FROM extensions WHERE extensionname = 'ext_nox_repair_negation')
 BEGIN
 	INSERT INTO extensions (extensionid, extensionname, category, rank, learningattributeprimary, bonus, note, price, active, description, targetPropertyID, effectenhancer, hidden, freezelimit) VALUES
-	(379, 'ext_nox_repair_negation', @extensionsCategory, 5, 'attributeA', -0.03, 'Increases NOX repair negation effect', 125000, 1, 'ext_nox_repair_negation_desc', @targetProperty, 1, 0, 7)
+	(379, 'ext_nox_repair_negation', @extensionsCategory, 5, 'attributeA', -0.05, 'Increases NOX repair negation effect', 125000, 1, 'ext_nox_repair_negation_desc', @targetProperty, 1, 0, 7)
 END
 ELSE
 BEGIN
-	UPDATE extensions SET bonus = -0.03 WHERE extensionname = 'ext_nox_repair_negation'
+	UPDATE extensions SET bonus = -0.05 WHERE extensionname = 'ext_nox_repair_negation'
 END
 
 ---- Create entity defaults for NOX modules
@@ -292,7 +308,11 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_usage')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 35)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 0)
+END
+ELSE
+BEGIN
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 ---- CPU usage
@@ -354,7 +374,11 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_usage')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 35)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 0)
+END
+ELSE
+BEGIN
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 ---- CPU usage
@@ -416,7 +440,11 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_usage')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 35)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 0)
+END
+ELSE
+BEGIN
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 ---- CPU usage
@@ -476,6 +504,18 @@ DECLARE @destinationCategoryFlag INT
 DECLARE @baseField INT
 DECLARE @modifierField INT
 
+-- NOX modules radius
+
+SET @destinationCategoryFlag = (SELECT TOP 1 value FROM categoryflags WHERE name = 'cf_nox_modules')
+
+DELETE FROM aggregatemodifiers WHERE categoryflag = @destinationCategoryFlag
+
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+
+INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
+(@destinationCategoryFlag, @baseField, @modifierField)
+
 -- NOX shield
 
 SET @destinationCategoryFlag = (SELECT TOP 1 value FROM categoryflags WHERE name = 'cf_nox_shield_negators')
@@ -484,12 +524,6 @@ DELETE FROM aggregatemodifiers WHERE categoryflag = @destinationCategoryFlag
 
 SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_shield_absorbtion_modifier')
 SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_shield_absorbtion_modifier_enhancer')
-
-INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
-(@destinationCategoryFlag, @baseField, @modifierField)
-
-SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
-SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
 
 INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
@@ -506,23 +540,7 @@ SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_rep
 INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
 
-SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
-SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
-
-INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
-(@destinationCategoryFlag, @baseField, @modifierField)
-
 -- NOX teleport
-
-SET @destinationCategoryFlag = (SELECT TOP 1 value FROM categoryflags WHERE name = 'cf_nox_repair_negators')
-
-DELETE FROM aggregatemodifiers WHERE categoryflag = @destinationCategoryFlag
-
-SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
-SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
-
-INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
-(@destinationCategoryFlag, @baseField, @modifierField)
 
 GO
 
@@ -531,6 +549,18 @@ GO
 DECLARE @destinationCategoryFlag INT
 DECLARE @baseField INT
 DECLARE @modifierField INT
+
+-- NOX modules
+
+SET @destinationCategoryFlag = (SELECT TOP 1 value FROM categoryflags WHERE name = 'cf_nox_modules')
+
+DELETE FROM modulepropertymodifiers WHERE categoryflags = @destinationCategoryFlag
+
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+
+INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
+(@destinationCategoryFlag, @baseField, @modifierField)
 
 -- NOX shield
 

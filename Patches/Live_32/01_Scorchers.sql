@@ -3,7 +3,11 @@
 IF NOT EXISTS (SELECT 1 FROM categoryflags WHERE name = 'cf_scorchers' )
 BEGIN
 	INSERT INTO categoryflags (value, name, note, hidden, isunique) VALUES
-	(853775, 'cf_scorchers', 'Scorchers', 1, 1)
+	(853775, 'cf_scorchers', 'Scorchers', 1, 0)
+END
+ELSE
+BEGIN
+	UPDATE categoryflags SET isunique = 0 WHERE name = 'cf_scorchers'
 END
 
 GO
@@ -184,6 +188,12 @@ INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
 
 SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range_modifier')
+
+INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
+(@destinationCategoryFlag, @baseField, @modifierField)
+
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range')
 SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'energy_neutralizer_optimal_range_modifier')
 
 INSERT INTO aggregatemodifiers (categoryflag, basefield, modifierfield) VALUES
@@ -220,13 +230,25 @@ SET @destinationCategoryFlag = (SELECT TOP 1 value FROM categoryflags WHERE name
 DELETE FROM modulepropertymodifiers WHERE categoryflags = @destinationCategoryFlag
 
 SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'cpu_usage')
-SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'cpu_usage_medium_energy_neutralizer_modifier')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'cpu_usage_engineering_modifier')
 
 INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
 
-SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_usage')
-SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_usage_energy_neutralizers_modifier')
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'powergrid_usage')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'powergrid_usage_engineering_modifier')
+
+INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
+(@destinationCategoryFlag, @baseField, @modifierField)
+
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'energy_dispersion')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'energy_dispersion_modifier')
+
+INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
+(@destinationCategoryFlag, @baseField, @modifierField)
+
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'engineering_optimal_range_modifier')
 
 INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
@@ -237,8 +259,8 @@ SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'energy_
 INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
 
-SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'powergrid_usage')
-SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'powergrid_usage_engineering_modifier')
+SET @baseField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range')
+SET @modifierField = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range_modifier')
 
 INSERT INTO modulepropertymodifiers (categoryflags, basefield, modifierfield) VALUES
 (@destinationCategoryFlag, @baseField, @modifierField)
