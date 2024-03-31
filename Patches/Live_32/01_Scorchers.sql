@@ -58,14 +58,14 @@ DECLARE @categoryFlag INT
 
 SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_scorchers')
 
-IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_standard_scorcher', 1, 66256, @categoryFlag, '#moduleFlag=i490  #ammoCapacity=i0  #powergrid_usage=f200.00  #cpu_usage=f35.00  #cycle_time=f10.00  #energy_neutralized_amount=f300.00  #optimal_range=f25.00  #core_usage=f225.00  #falloff=f0.00  #tier=$tierlevel_t1', 1, 1, 500, 0, 100, 'def_standard_scorcher_desc', 1, 1, 1)
+	('def_elite2_cultist_scorcher', 1, 66256, @categoryFlag, '#moduleFlag=i490  #ammoCapacity=i0  #powergrid_usage=f200.00  #cpu_usage=f35.00  #cycle_time=f10.00  #energy_neutralized_amount=f300.00  #optimal_range=f25.00  #core_usage=f225.00  #falloff=f0.00  #tier=$tierlevel_t2+', 1, 1, 500, 0, 100, 'def_elite2_cultist_scorcher_desc', 1, 3, 2)
 END
 ELSE
 BEGIN
-	UPDATE entitydefaults SET categoryflags = @categoryFlag, options='#moduleFlag=i490  #ammoCapacity=i0  #powergrid_usage=f200.00  #cpu_usage=f35.00  #cycle_time=f10.00  #energy_neutralized_amount=f300.00  #optimal_range=f25.00  #core_usage=f225.00  #falloff=f0.00  #tier=$tierlevel_t1', mass=500, hidden = 0 WHERE definitionname = 'def_standard_scorcher'
+	UPDATE entitydefaults SET categoryflags = @categoryFlag, options='#moduleFlag=i490  #ammoCapacity=i0  #powergrid_usage=f200.00  #cpu_usage=f35.00  #cycle_time=f10.00  #energy_neutralized_amount=f300.00  #optimal_range=f25.00  #core_usage=f225.00  #falloff=f0.00  #tier=$tierlevel_t2+', mass=500, hidden = 0 WHERE definitionname = 'def_elite2_cultist_scorcher'
 END
 
 GO
@@ -79,7 +79,7 @@ DECLARE @field INT
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_usage')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -90,7 +90,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'cpu_usage')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -101,7 +101,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'cycle_time')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -112,7 +112,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'electric_damage')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -123,7 +123,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'falloff')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -134,7 +134,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'optimal_range')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -145,7 +145,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'powergrid_usage')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -156,7 +156,7 @@ END
 
 SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'energy_dispersion')
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
 BEGIN
@@ -288,7 +288,7 @@ SET @beamId = (SELECT TOP 1 id FROM beams WHERE name = 'medium_e_nezt_beam')
 
 -- standard
 
-SET @moduleId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @moduleId = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 
 IF NOT EXISTS (SELECT 1 FROM beamassignment WHERE definition = @moduleId AND beam = @beamId)
 BEGIN

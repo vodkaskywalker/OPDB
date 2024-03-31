@@ -23,7 +23,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modif
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 20)
 END
 ELSE
 BEGIN
@@ -34,7 +34,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifi
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 10)
 END
 ELSE
 BEGIN
@@ -223,12 +223,12 @@ SET @leg = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = '
 SET @inventory = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_robot_inventory_combat_ewmech_indy_runner_mk2')
 SET @shield = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_shield_generator')
 SET @shield_hardener = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_shield_hardener')
-SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 SET @recharger = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_core_recharger')
 SET @range_extender = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_tracking_upgrade')
 SET @sensor_booster = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_sensor_booster')
 SET @aux_accu = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_core_battery')
-SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_teleport_negator')
+SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator')
 SET @lwf = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_mass_reductor')
 
 IF NOT EXISTS (SELECT 1 FROM robottemplates WHERE name = 'Cultist_Preacher_Ictus')
@@ -331,7 +331,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modif
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 20)
 END
 ELSE
 BEGIN
@@ -342,7 +342,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifi
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 10)
 END
 ELSE
 BEGIN
@@ -542,12 +542,12 @@ SET @leg = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = '
 SET @inventory = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_robot_inventory_combat_ewmech_indy_runner_mk2')
 SET @shield = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_shield_generator')
 SET @shield_hardener = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_shield_hardener')
-SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 SET @recharger = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_core_recharger')
 SET @range_extender = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_tracking_upgrade')
 SET @sensor_booster = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_sensor_booster')
 SET @aux_accu = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_core_battery')
-SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_shield_negator')
+SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_shield_negator')
 SET @lwf = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_mass_reductor')
 
 IF NOT EXISTS (SELECT 1 FROM robottemplates WHERE name = 'Cultist_Preacher_Zenith')
@@ -650,7 +650,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modif
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 20)
 END
 ELSE
 BEGIN
@@ -661,7 +661,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifi
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 10)
 END
 ELSE
 BEGIN
@@ -861,12 +861,12 @@ SET @leg = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = '
 SET @inventory = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_robot_inventory_combat_ewmech_indy_runner_mk2')
 SET @shield = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_shield_generator')
 SET @shield_hardener = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_shield_hardener')
-SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
+SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 SET @recharger = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_core_recharger')
 SET @range_extender = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_tracking_upgrade')
 SET @sensor_booster = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_sensor_booster')
 SET @aux_accu = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_core_battery')
-SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_repair_negator')
+SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_repair_negator')
 SET @lwf = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_mass_reductor')
 
 IF NOT EXISTS (SELECT 1 FROM robottemplates WHERE name = 'Cultist_Preacher_Vagabond')
@@ -952,210 +952,157 @@ DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note) VALUES
 (@targetDefinition, @templateId, 2, NULL, NULL, 1500, 'def_npc_cultist_preacher_vagabond')
 
--- Create Cultist Preacher Vagabond
+GO
 
-IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_vagabond')
+-- Create Cultist Zealot Mesmer
+
+DECLARE @sourceDefinition INT
+DECLARE @targetDefinition INT
+DECLARE @templateId INT
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_mesmer')
 BEGIN
-	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_npc_cultist_preacher_vagabond', 1, 1024, 1167, '', 'Vagabond, Scorchers, Shield, NOX Repair', 1, 0, 0, 0, 100, 'def_npc_cultist_preacher_vagabond_desc', 1, NULL, NULL)
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_zealot_mesmer', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_zealot_mesmer_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_mesmer_heavydps_rank5'
 END
 
-SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_vagabond')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_mesmer_heavydps_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_mesmer')
 
 DELETE FROM aggregatevalues WHERE definition = @targetDefinition
 
-DECLARE @field INT
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modifier')
+DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 3 WHERE definition = @targetDefinition AND field = @field
-END
+INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note)
+SELECT @targetDefinition, templateId, raceid, missionlevel, missionleveloverride, killep, note FROM robottemplaterelation WHERE definition = @sourceDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifier')
+-- Create Cultist Acolyte Vagabond
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 3 WHERE definition = @targetDefinition AND field = @field
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_acolyte_vagabond', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_acolyte_vagabond_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_vagabond_heavyew_rank5'
 END
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_recharge_time_modifier')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_vagabond_heavyew_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 1)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 1 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM aggregatevalues WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'electric_damage_modifier')
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 2)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 1.5 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'locked_targets_max')
+INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note)
+SELECT @targetDefinition, templateId, raceid, missionlevel, missionleveloverride, killep, note FROM robottemplaterelation WHERE definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
+-- Create Cultist Zealot Seth
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_seth')
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 10)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 10 WHERE definition = @targetDefinition AND field = @field
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_zealot_seth', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_zealot_seth_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_seth_heavydps_rank5'
 END
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'locked_targets_max_bonus')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_seth_heavydps_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_seth')
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 10)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 10 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM aggregatevalues WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'locking_range_modifier')
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 4.5)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 4.5 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'locking_time_modifier')
+INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note)
+SELECT @targetDefinition, templateId, raceid, missionlevel, missionleveloverride, killep, note FROM robottemplaterelation WHERE definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
+-- Create Cultist Acolyte Zenith
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_zenith')
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 0.7)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 0.7 WHERE definition = @targetDefinition AND field = @field
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_acolyte_zenith', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_acolyte_zenith_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_zenith_heavyew_rank5'
 END
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'resist_chemical')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_zenith_heavyew_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_zenith')
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 200)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 200 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM aggregatevalues WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'resist_explosive')
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 200)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 200 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'resist_kinetic')
+INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note)
+SELECT @targetDefinition, templateId, raceid, missionlevel, missionleveloverride, killep, note FROM robottemplaterelation WHERE definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
+-- Create Cultist Zealot Gropho
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_gropho')
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 200)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 200 WHERE definition = @targetDefinition AND field = @field
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_zealot_gropho', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_zealot_gropho_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_gropho_heavydps_rank5'
 END
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'resist_thermal')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_gropho_heavydps_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_gropho')
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 200)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 200 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM aggregatevalues WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'sensor_strength_modifier')
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 450)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 300 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'shield_absorbtion_modifier')
+INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note)
+SELECT @targetDefinition, templateId, raceid, missionlevel, missionleveloverride, killep, note FROM robottemplaterelation WHERE definition = @sourceDefinition
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
+-- Create Cultist Acolyte Ictus
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_ictus')
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 3 WHERE definition = @targetDefinition AND field = @field
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_acolyte_ictus', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_acolyte_ictus_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_ictus_heavyew_rank5'
 END
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'energy_neutralizer_optimal_range_modifier')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_ictus_heavyew_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_ictus')
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
+DELETE FROM aggregatevalues WHERE definition = @targetDefinition
+
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
+
+DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
+
+INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note)
+SELECT @targetDefinition, templateId, raceid, missionlevel, missionleveloverride, killep, note FROM robottemplaterelation WHERE definition = @sourceDefinition
+
+-- Create Cultist Martyr Termis
+
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 3)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 3 WHERE definition = @targetDefinition AND field = @field
+	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype)
+	SELECT 'def_npc_cultist_martyr_termis', quantity, attributeflags, categoryflags, options, note, enabled, volume, mass, hidden, health, 'def_npc_cultist_martyr_termis_desc', purchasable, tiertype FROM entitydefaults WHERE definitionname = 'def_npc_termis_basic_rank5'
 END
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+SET @sourceDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_termis_basic_rank5')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 200)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 200 WHERE definition = @targetDefinition AND field = @field
-END
+DELETE FROM aggregatevalues WHERE definition = @targetDefinition
 
-SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_repair_amount_modifier_enhancer')
-
-IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
-BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 0.45)
-END
-ELSE
-BEGIN
-	UPDATE aggregatevalues SET value = 0.45 WHERE definition = @targetDefinition AND field = @field
-END
+INSERT INTO aggregatevalues
+SELECT @targetDefinition, field, value FROM aggregatevalues where definition = @sourceDefinition
 
 GO
 
----- Create Vagabond Preacher template
+-- Create template for Cultist Martyr Sequer
 
 DECLARE @robot INT
 DECLARE @head INT
@@ -1164,112 +1111,71 @@ DECLARE @leg INT
 DECLARE @inventory INT
 DECLARE @shield INT
 DECLARE @shield_hardener INT
-DECLARE @scorcher INT
+DECLARE @energy_transferer INT
 DECLARE @recharger INT
-DECLARE @range_extender INT
-DECLARE @sensor_booster INT
-DECLARE @aux_accu INT
-DECLARE @nox_module INT
-DECLARE @lwf INT
 DECLARE @targetDefinition INT
-
-SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_vagabond')
-SET @robot = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_vagabond_mk2_bot')
-SET @head = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_vagabond_head_mk2')
-SET @chassis = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_vagabond_chassis_mk2')
-SET @leg = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_vagabond_leg_mk2')
-SET @inventory = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_robot_inventory_combat_ewmech_indy_runner_mk2')
-SET @shield = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_shield_generator')
-SET @shield_hardener = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_shield_hardener')
-SET @scorcher = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_scorcher')
-SET @recharger = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_core_recharger')
-SET @range_extender = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_tracking_upgrade')
-SET @sensor_booster = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_sensor_booster')
-SET @aux_accu = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_core_battery')
-SET @nox_module = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_repair_negator')
-SET @lwf = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_mass_reductor')
-
-IF NOT EXISTS (SELECT 1 FROM robottemplates WHERE name = 'Cultist_Preacher_Vagabond')
-BEGIN
-	INSERT INTO robottemplates (name, description, note) VALUES
-	('Cultist_Preacher_Vagabond', CONCAT(
-		'#robot=i',
-		FORMAT(@robot, 'X'),
-		'#head=i',
-		FORMAT(@head, 'X'),
-		'#chassis=i',
-		FORMAT(@chassis, 'X'),
-		'#leg=i',
-		FORMAT(@leg, 'X'),
-		'#container=i',
-		FORMAT(@inventory, 'X'),
-		'#headModules=[|m0=[|definition=i',
-		FORMAT(@sensor_booster, 'X'),
-		'|slot=i1]|m1=[|definition=i',
-		FORMAT(@nox_module, 'X'),
-		'|slot=i2]|m2=[|definition=i',
-		FORMAT(@range_extender, 'X'),
-		'|slot=i3]|m3=[|definition=i',
-		FORMAT(@shield_hardener, 'X'),
-		'|slot=i4]]#chassisModules=[|m0=[|definition=i',
-		FORMAT(@scorcher, 'X'),
-		'|slot=i1]|m1=[|definition=i',
-		FORMAT(@scorcher, 'X'),
-		'|slot=i2]]#legModules=[|m0=[|definition=i',
-		FORMAT(@shield, 'X'),
-		'|slot=i1]|m1=[|definition=i',
-		FORMAT(@recharger, 'X'),
-		'|slot=i2]|m2=[|definition=i',
-		FORMAT(@aux_accu, 'X'),
-		'|slot=i2]|m3=[|definition=i',
-		FORMAT(@lwf, 'X'),
-		'|slot=i4]]'), 'Cultist Preacher Zenith')
-END
-ELSE
-BEGIN
-	UPDATE robottemplates SET description = CONCAT(
-		'#robot=i',
-		FORMAT(@robot, 'X'),
-		'#head=i',
-		FORMAT(@head, 'X'),
-		'#chassis=i',
-		FORMAT(@chassis, 'X'),
-		'#leg=i',
-		FORMAT(@leg, 'X'),
-		'#container=i',
-		FORMAT(@inventory, 'X'),
-		'#headModules=[|m0=[|definition=i',
-		FORMAT(@sensor_booster, 'X'),
-		'|slot=i1]|m1=[|definition=i',
-		FORMAT(@nox_module, 'X'),
-		'|slot=i2]|m2=[|definition=i',
-		FORMAT(@range_extender, 'X'),
-		'|slot=i3]|m3=[|definition=i',
-		FORMAT(@shield_hardener, 'X'),
-		'|slot=i4]]#chassisModules=[|m0=[|definition=i',
-		FORMAT(@scorcher, 'X'),
-		'|slot=i1]|m1=[|definition=i',
-		FORMAT(@scorcher, 'X'),
-		'|slot=i2]]#legModules=[|m0=[|definition=i',
-		FORMAT(@shield, 'X'),
-		'|slot=i1]|m1=[|definition=i',
-		FORMAT(@recharger, 'X'),
-		'|slot=i2]|m2=[|definition=i',
-		FORMAT(@aux_accu, 'X'),
-		'|slot=i2]|m3=[|definition=i',
-		FORMAT(@lwf, 'X'),
-		'|slot=i4]]')
-	WHERE name = 'Cultist_Preacher_Vagabond'
-END
-
 DECLARE @templateId INT
 
-SET @templateId = (SELECT TOP 1 id FROM robottemplates WHERE name = 'Cultist_Preacher_Vagabond')
+SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
+SET @robot = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_termis_mk2_bot')
+SET @head = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_termis_head_mk2')
+SET @chassis = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_termis_chassis_mk2')
+SET @leg = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_termis_leg_mk2')
+SET @inventory = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_robot_inventory_sequer_mk2')
+SET @shield = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_shield_generator')
+SET @shield_hardener = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_shield_hardener')
+SET @energy_transferer = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_medium_energy_transfer')
+SET @recharger = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_core_recharger')
+
+IF NOT EXISTS (SELECT 1 FROM robottemplates WHERE name = 'Cultist_Martyr_Termis')
+BEGIN
+	INSERT INTO robottemplates (name, description, note) VALUES
+	('Cultist_Martyr_Termis', CONCAT(
+		'#robot=i',
+		FORMAT(@robot, 'X'),
+		'#head=i',
+		FORMAT(@head, 'X'),
+		'#chassis=i',
+		FORMAT(@chassis, 'X'),
+		'#leg=i',
+		FORMAT(@leg, 'X'),
+		'#container=i',
+		FORMAT(@inventory, 'X'),
+		'#headModules=[|m0=[|definition=i',
+		FORMAT(@shield_hardener, 'X'),
+		'|slot=i1]|m1=[|definition=i',
+		FORMAT(@shield_hardener, 'X'),
+		'|slot=i2]|m2=[|definition=i',
+		FORMAT(@shield_hardener, 'X'),
+		'|slot=i3]|m3=[|definition=i',
+		FORMAT(@shield_hardener, 'X'),
+		'|slot=i4]|m4=[|definition=i',
+		FORMAT(@shield_hardener, 'X'),
+		'|slot=i5]]#chassisModules=[|m0=[|definition=i',
+		FORMAT(@energy_transferer, 'X'),
+		'|slot=i1]|m1=[|definition=i',
+		FORMAT(@energy_transferer, 'X'),
+		'|slot=i2]|m2=[|definition=i',
+		FORMAT(@energy_transferer, 'X'),
+		'|slot=i3]]#legModules=[|m0=[|definition=i',
+		FORMAT(@shield, 'X'),
+		'|slot=i1]|m1=[|definition=i',
+		FORMAT(@recharger, 'X'),
+		'|slot=i2]|m2=[|definition=i',
+		FORMAT(@recharger, 'X'),
+		'|slot=i3]|m3=[|definition=i',
+		FORMAT(@recharger, 'X'),
+		'|slot=i4]|m4=[|definition=i',
+		FORMAT(@recharger, 'X'),
+		'|slot=i5]]'), 'Cultist Martyr Termis')
+END
+		
+SET @templateId = (SELECT TOP 1 id FROM robottemplates WHERE name = 'Cultist_Martyr_Termis')
 
 DELETE FROM robottemplaterelation WHERE definition = @targetDefinition
 
 INSERT INTO robottemplaterelation (definition, templateid, raceid, missionlevel, missionleveloverride, killep, note) VALUES
-(@targetDefinition, @templateId, 2, NULL, NULL, 1500, 'def_npc_cultist_preacher_vagabond')
+(@targetDefinition, @templateId, 2, NULL, NULL, 1500, 'def_npc_cultist_martyr_termis')
 
 GO
 
@@ -1323,6 +1229,62 @@ IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_p
 BEGIN
 INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
 	('roamer_cultists_z6_cultist_preacher_vagabond', @presenceid, 1, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_mesmer')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_zealot_mesmer')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_zealot_mesmer', @presenceid, 3, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_seth')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_zealot_seth')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_zealot_seth', @presenceid, 3, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_zealot_gropho')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_zealot_gropho')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_zealot_gropho', @presenceid, 3, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_acolyte_vagabond')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_acolyte_vagabond', @presenceid, 2, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_zenith')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_acolyte_zenith')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_acolyte_zenith', @presenceid, 2, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_ictus')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_acolyte_ictus')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_acolyte_ictus', @presenceid, 2, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+END
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
+
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultists_z6_cultist_martyr_termis')
+BEGIN
+INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
+	('roamer_cultists_z6_cultist_martyr_termis', @presenceid, 6, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
 END
 
 GO

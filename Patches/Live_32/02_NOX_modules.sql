@@ -257,38 +257,38 @@ DECLARE @categoryFlag INT
 
 SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_nox_shield_negators')
 
-IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_standard_nox_shield_negator')
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_shield_negator')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_standard_nox_shield_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icca #plasmaConsumption=i3e8  #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_standard_nox_shield_negator_desc', 1, 1, 1)
+	('def_elite2_cultist_nox_shield_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icca #plasmaConsumption=i3e8  #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_shield_negator_desc', 1, 3, 2)
 END
 ELSE
 BEGIN
-	UPDATE entitydefaults SET options = '#moduleFlag=i8 #plasmaDefinition=icca #plasmaConsumption=i3e8  #tier=$tierlevel_t1' WHERE definitionname = 'def_standard_nox_shield_negator'
+	UPDATE entitydefaults SET options = '#moduleFlag=i8 #plasmaDefinition=icca #plasmaConsumption=i3e8  #tier=$tierlevel_t1' WHERE definitionname = 'def_elite2_cultist_nox_shield_negator'
 END
 
 SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_nox_repair_negators')
 
-IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_standard_nox_repair_negator')
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_repair_negator')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_standard_nox_repair_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc9 #plasmaConsumption=i3e8 #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_standard_nox_repair_negator_desc', 1, 1, 1)
+	('def_elite2_cultist_nox_repair_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc9 #plasmaConsumption=i3e8 #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_repair_negator_desc', 1, 3, 2)
 END
 ELSE
 BEGIN
-	UPDATE entitydefaults SET options = '#moduleFlag=i8 #plasmaDefinition=icc9 #plasmaConsumption=i3e8  #tier=$tierlevel_t1' WHERE definitionname = 'def_standard_nox_repair_negator'
+	UPDATE entitydefaults SET options = '#moduleFlag=i8 #plasmaDefinition=icc9 #plasmaConsumption=i3e8  #tier=$tierlevel_t1' WHERE definitionname = 'def_elite2_cultist_nox_repair_negator'
 END
 
 SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_nox_teleport_negators')
 
-IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_standard_nox_teleport_negator')
+IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_standard_nox_teleport_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc8 #plasmaConsumption=i3e8 #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_standard_nox_teleport_negator_desc', 1, 1, 1)
+	('def_elite2_cultist_nox_teleport_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc8 #plasmaConsumption=i3e8 #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_teleport_negator_desc', 1, 3, 2)
 END
 ELSE
 BEGIN
-	UPDATE entitydefaults SET options = '#moduleFlag=i8 #plasmaDefinition=icc8 #plasmaConsumption=i3e8  #tier=$tierlevel_t1' WHERE definitionname = 'def_standard_nox_teleport_negator'
+	UPDATE entitydefaults SET options = '#moduleFlag=i8 #plasmaDefinition=icc8 #plasmaConsumption=i3e8  #tier=$tierlevel_t1' WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator'
 END
 
 GO
@@ -300,7 +300,7 @@ DECLARE @field INT
 
 -- NOX shield negator
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_shield_negator')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_shield_negator')
 
 ---- Core usage
 
@@ -366,7 +366,7 @@ END
 
 -- NOX repair negator
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_repair_negator')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_repair_negator')
 
 ---- Core usage
 
@@ -432,7 +432,7 @@ END
 
 -- NOX teleport negator
 
-SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_standard_nox_teleport_negator')
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator')
 
 ---- Core usage
 
