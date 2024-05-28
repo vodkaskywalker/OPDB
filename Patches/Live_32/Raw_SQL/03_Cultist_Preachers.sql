@@ -3245,7 +3245,7 @@ INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackag
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.175, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.35, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_artifact_a_core_recharger')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
@@ -3265,7 +3265,7 @@ INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackag
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_shield_negator')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.175, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.35, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_artifact_a_mass_reductor')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
@@ -3375,7 +3375,7 @@ INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackag
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.175, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.35, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_artifact_a_core_recharger')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
@@ -3395,11 +3395,11 @@ INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackag
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_repair_negator')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.0025, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.35, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_artifact_a_mass_reductor')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.0025, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.175, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_medium_shield_generator')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
@@ -3489,7 +3489,7 @@ SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definit
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
 (@targetDefinition, @lootDefinition, 768, 1, 0, 1, 512)
 
--- Ictus Acolyte
+-- Ictus Preacher
 
 SET @targetDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_ictus')
 
@@ -3505,7 +3505,7 @@ INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackag
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_scorcher')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.175, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.35, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_artifact_a_core_recharger')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
@@ -3525,7 +3525,7 @@ INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackag
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES
-(@targetDefinition, @lootDefinition, 1, 0.175, 0, 0, 1)
+(@targetDefinition, @lootDefinition, 1, 0.35, 0, 0, 1)
 
 SET @lootDefinition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_artifact_a_mass_reductor')
 INSERT INTO npcloot (definition, lootdefinition, quantity, probability, repackaged, dontdamage, minquantity) VALUES

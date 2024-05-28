@@ -120,6 +120,36 @@ BEGIN
 	UPDATE aggregatefields SET formula = 1 WHERE name = 'nox_teleport_negation'
 END
 
+IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'ppm_pelistal_plasma_consumption')
+BEGIN
+	INSERT INTO aggregatefields (name, formula, measurementunit, measurementmultiplier, measurementoffset, category, digits, moreisbetter, usedinconfig, note) VALUES
+	('ppm_pelistal_plasma_consumption', 1,'ppm_pelistal_plasma_consumption_unit', 1, 0, 6, 2, 1, 1, 'Plasma-powered module pelistal plasma consumption')
+END
+ELSE
+BEGIN
+	UPDATE aggregatefields SET formula = 1 WHERE name = 'ppm_pelistal_plasma_consumption'
+END
+
+IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'ppm_nuimqol_plasma_consumption')
+BEGIN
+	INSERT INTO aggregatefields (name, formula, measurementunit, measurementmultiplier, measurementoffset, category, digits, moreisbetter, usedinconfig, note) VALUES
+	('ppm_nuimqol_plasma_consumption', 1,'ppm_nuimqol_plasma_consumption_unit', 1, 0, 6, 2, 1, 1, 'Plasma-powered module nuimqol plasma consumption')
+END
+ELSE
+BEGIN
+	UPDATE aggregatefields SET formula = 1 WHERE name = 'ppm_nuimqol_plasma_consumption'
+END
+
+IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'ppm_thelodica_plasma_consumption')
+BEGIN
+	INSERT INTO aggregatefields (name, formula, measurementunit, measurementmultiplier, measurementoffset, category, digits, moreisbetter, usedinconfig, note) VALUES
+	('ppm_thelodica_plasma_consumption', 1,'ppm_thelodica_plasma_consumption_unit', 1, 0, 6, 2, 1, 1, 'Plasma-powered module thelodica plasma consumption')
+END
+ELSE
+BEGIN
+	UPDATE aggregatefields SET formula = 1 WHERE name = 'ppm_thelodica_plasma_consumption'
+END
+
 GO
 
 ---- Add new effect category
@@ -364,6 +394,19 @@ BEGIN
 	UPDATE aggregatevalues SET value = 0.9 WHERE definition = @definition AND field = @field
 END
 
+---- Thelodica plasma consumption
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'ppm_thelodica_plasma_consumption')
+
+IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
+BEGIN
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 1000)
+END
+ELSE
+BEGIN
+	UPDATE aggregatevalues SET value = 1000 WHERE definition = @definition AND field = @field
+END
+
 -- NOX repair negator
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_repair_negator')
@@ -430,6 +473,19 @@ BEGIN
 	UPDATE aggregatevalues SET value = 0.9 WHERE definition = @definition AND field = @field
 END
 
+---- Nuimqol plasma consumption
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'ppm_nuimqol_plasma_consumption')
+
+IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
+BEGIN
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 1000)
+END
+ELSE
+BEGIN
+	UPDATE aggregatevalues SET value = 1000 WHERE definition = @definition AND field = @field
+END
+
 -- NOX teleport negator
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator')
@@ -494,6 +550,19 @@ END
 ELSE
 BEGIN
 	UPDATE aggregatevalues SET value = 0.9 WHERE definition = @definition AND field = @field
+END
+
+---- Pelistal plasma consumption
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'ppm_pelistal_plasma_consumption')
+
+IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @definition AND field = @field)
+BEGIN
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@definition, @field, 1000)
+END
+ELSE
+BEGIN
+	UPDATE aggregatevalues SET value = 1000 WHERE definition = @definition AND field = @field
 END
 
 GO
