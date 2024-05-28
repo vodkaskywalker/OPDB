@@ -260,7 +260,7 @@ SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_nox_
 IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_shield_negator')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_elite2_cultist_nox_shield_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icca #plasmaConsumption=i3e8  #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_shield_negator_desc', 1, 3, 2)
+	('def_elite2_cultist_nox_shield_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icca #plasmaConsumption=i3e8  #tier=$tierlevel_t2+', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_shield_negator_desc', 1, 3, 2)
 END
 ELSE
 BEGIN
@@ -272,7 +272,7 @@ SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_nox_
 IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_repair_negator')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_elite2_cultist_nox_repair_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc9 #plasmaConsumption=i3e8 #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_repair_negator_desc', 1, 3, 2)
+	('def_elite2_cultist_nox_repair_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc9 #plasmaConsumption=i3e8 #tier=$tierlevel_t2+', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_repair_negator_desc', 1, 3, 2)
 END
 ELSE
 BEGIN
@@ -284,7 +284,7 @@ SET @categoryFlag = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_nox_
 IF NOT EXISTS (SELECT 1 FROM entitydefaults WHERE definitionname = 'def_elite2_cultist_nox_teleport_negator')
 BEGIN
 	INSERT INTO entitydefaults (definitionname, quantity, attributeflags, categoryflags, options, enabled, volume, mass, hidden, health, descriptiontoken, purchasable, tiertype, tierlevel) VALUES
-	('def_elite2_cultist_nox_teleport_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc8 #plasmaConsumption=i3e8 #tier=$tierlevel_t1', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_teleport_negator_desc', 1, 3, 2)
+	('def_elite2_cultist_nox_teleport_negator', 1, 1052948, @categoryFlag, '#moduleFlag=i8 #plasmaDefinition=icc8 #plasmaConsumption=i3e8 #tier=$tierlevel_t2+', 1, 0.2, 50, 0, 100, 'def_elite2_cultist_nox_teleport_negator_desc', 1, 3, 2)
 END
 ELSE
 BEGIN

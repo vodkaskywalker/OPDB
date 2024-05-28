@@ -1,9 +1,19 @@
 ---- Create category flags for Scorchers
 
+IF NOT EXISTS (SELECT 1 FROM categoryflags WHERE name = 'cf_electric_weapons' )
+BEGIN
+	INSERT INTO categoryflags (value, name, note, hidden, isunique) VALUES
+	(853775, 'cf_electric_weapons', 'Electric weapons', 1, 0)
+END
+ELSE
+BEGIN
+	UPDATE categoryflags SET isunique = 0 WHERE name = 'cf_scorchers'
+END
+
 IF NOT EXISTS (SELECT 1 FROM categoryflags WHERE name = 'cf_scorchers' )
 BEGIN
 	INSERT INTO categoryflags (value, name, note, hidden, isunique) VALUES
-	(853775, 'cf_scorchers', 'Scorchers', 1, 0)
+	(17630991, 'cf_scorchers', 'Scorchers', 1, 0)
 END
 ELSE
 BEGIN
