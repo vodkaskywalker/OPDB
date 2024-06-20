@@ -56,3 +56,9 @@ BEGIN
 	DROP TABLE #Fragmentation
 
 END
+
+GO
+
+EXEC dbo.indexesMaintenance
+
+GO
