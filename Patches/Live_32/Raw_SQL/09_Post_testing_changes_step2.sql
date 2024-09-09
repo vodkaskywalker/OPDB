@@ -383,3 +383,104 @@ UPDATE entitydefaults SET options = '#slotFlags=4888,8,8,8,8,8  #height=f0.10', 
 UPDATE entitydefaults SET options = '#slotFlags=4888,8,8,8,8,8  #height=f0.10', mass=3000  WHERE definitionname = 'def_spectator_head_pr'
 
 GO
+
+---- Rebalance Preachers
+
+DECLARE @definition INT
+DECLARE @field INT
+
+--
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_ictus')
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modifier')
+
+UPDATE aggregatevalues SET value = 16 WHERE definition = @definition AND field = @field
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifier')
+
+UPDATE aggregatevalues SET value = 8 WHERE definition = @definition AND field = @field
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+
+UPDATE aggregatevalues SET value = 50 WHERE definition = @definition AND field = @field
+
+--
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_zenith')
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modifier')
+
+UPDATE aggregatevalues SET value = 16 WHERE definition = @definition AND field = @field
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifier')
+
+UPDATE aggregatevalues SET value = 8 WHERE definition = @definition AND field = @field
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+
+UPDATE aggregatevalues SET value = 50 WHERE definition = @definition AND field = @field
+
+--
+
+SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_preacher_vagabond')
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'armor_max_modifier')
+
+UPDATE aggregatevalues SET value = 16 WHERE definition = @definition AND field = @field
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'core_max_modifier')
+
+UPDATE aggregatevalues SET value = 8 WHERE definition = @definition AND field = @field
+
+SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'nox_effect_enhancer_radius_modifier')
+
+UPDATE aggregatevalues SET value = 50 WHERE definition = @definition AND field = @field
+
+GO
+
+/*
+---- Disable extra reinvorcement waves
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_2' AND spawnid = 10
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_2' AND spawnid = 10
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_2' AND spawnid = 10
+
+--
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_2' AND spawnid = 10
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_2' AND spawnid = 10
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_2' AND spawnid = 10
+
+--
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_2' AND spawnid = 10
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_2' AND spawnid = 10
+
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_0' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_1' AND spawnid = 10
+UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_2' AND spawnid = 10
+*/
+
+GO

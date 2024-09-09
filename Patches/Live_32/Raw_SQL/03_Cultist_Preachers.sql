@@ -56,7 +56,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'electric_damage
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 2)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 1.5)
 END
 ELSE
 BEGIN
@@ -364,7 +364,7 @@ SET @field = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'electric_damage
 
 IF NOT EXISTS (SELECT 1 FROM aggregatevalues WHERE definition = @targetDefinition AND field = @field)
 BEGIN
-	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 2)
+	INSERT INTO aggregatevalues (definition, field, value) VALUES (@targetDefinition, @field, 1.5)
 END
 ELSE
 BEGIN
@@ -1359,6 +1359,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Vagabond wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_2' AND spawnid = 10)
@@ -1400,6 +1401,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Zenith wave 0
 
@@ -1408,6 +1410,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_zenith_z6_wave_0', 0, 0, 0, 0, 'Tellesis Cultists Reinforcement Wave 0', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_0')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
@@ -1449,6 +1453,8 @@ BEGIN
 	('reinforce_cultists_preacher_zenith_z6_wave_1', 0, 0, 0, 0, 'Tellesis Cultists Reinforcement Wave 1', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
 
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_1')
+
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
 IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'reinforce_cultists_z6_cultist_acolyte_vagabond_wave_1')
@@ -1481,6 +1487,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Zenith wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_2' AND spawnid = 10)
@@ -1488,6 +1495,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_zenith_z6_wave_2', 0, 0, 0, 0, 'Tellesis Cultists Reinforcement Wave 2', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_2')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
@@ -1520,6 +1529,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Ictus wave 0
 
@@ -1528,6 +1538,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_ictus_z6_wave_0', 0, 0, 0, 0, 'Tellesis Cultists Reinforcement Wave 0', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_0')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
@@ -1553,6 +1565,8 @@ BEGIN
 	('reinforce_cultists_preacher_ictus_z6_wave_1', 0, 0, 0, 0, 'Tellesis Cultists Reinforcement Wave 1', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
 
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_1')
+
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
 IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'reinforce_cultists_z6_cultist_martyr_termis_wave_1')
@@ -1569,6 +1583,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Ictus wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_2' AND spawnid = 10)
@@ -1576,6 +1591,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_ictus_z6_wave_2', 0, 0, 0, 0, 'Tellesis Cultists Reinforcement Wave 2', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_2')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
@@ -1592,6 +1609,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Shinjalar
 
@@ -1756,6 +1774,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Vagabond wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_2' AND spawnid = 10)
@@ -1797,6 +1816,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Zenith wave 0
 
@@ -1805,6 +1825,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_zenith_z7_wave_0', 0, 0, 0, 0, 'Shinjalar Cultists Reinforcement Wave 0', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_0')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
@@ -1846,6 +1868,8 @@ BEGIN
 	('reinforce_cultists_preacher_zenith_z7_wave_1', 0, 0, 0, 0, 'Shinjalar Cultists Reinforcement Wave 1', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
 
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_1')
+
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
 IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'reinforce_cultists_z7_cultist_acolyte_vagabond_wave_1')
@@ -1878,6 +1902,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Zenith wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_2' AND spawnid = 10)
@@ -1885,6 +1910,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_zenith_z7_wave_2', 0, 0, 0, 0, 'Shinjalar Cultists Reinforcement Wave 2', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_2')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
@@ -1917,6 +1944,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Ictus wave 0
 
@@ -1925,6 +1953,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_ictus_z7_wave_0', 0, 0, 0, 0, 'Shinjalar Cultists Reinforcement Wave 0', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_0')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
@@ -1950,6 +1980,8 @@ BEGIN
 	('reinforce_cultists_preacher_ictus_z7_wave_1', 0, 0, 0, 0, 'Shinjalar Cultists Reinforcement Wave 1', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
 
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_1')
+
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
 IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'reinforce_cultists_z7_cultist_martyr_termis_wave_1')
@@ -1966,6 +1998,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Ictus wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_2' AND spawnid = 10)
@@ -1973,6 +2006,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_ictus_z7_wave_2', 0, 0, 0, 0, 'Shinjalar Cultists Reinforcement Wave 2', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_2')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
@@ -1989,6 +2024,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Attalica
 
@@ -2153,6 +2189,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Vagabond wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_2' AND spawnid = 10)
@@ -2194,6 +2231,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Zenith wave 0
 
@@ -2202,6 +2240,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_zenith_z1_wave_0', 0, 0, 0, 0, 'Attalica Cultists Reinforcement Wave 0', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_0')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
@@ -2243,6 +2283,8 @@ BEGIN
 	('reinforce_cultists_preacher_zenith_z1_wave_1', 0, 0, 0, 0, 'Attalica Cultists Reinforcement Wave 1', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
 
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_1')
+
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
 IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'reinforce_cultists_z1_cultist_acolyte_vagabond_wave_1')
@@ -2275,6 +2317,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Zenith wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_2' AND spawnid = 10)
@@ -2282,6 +2325,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_zenith_z1_wave_2', 0, 0, 0, 0, 'Attalica Cultists Reinforcement Wave 2', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_2')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_acolyte_vagabond')
 
@@ -2314,6 +2359,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 -- Ictus wave 0
 
@@ -2322,6 +2368,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_ictus_z1_wave_0', 0, 0, 0, 0, 'Attalica Cultists Reinforcement Wave 0', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_0')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
@@ -2347,6 +2395,8 @@ BEGIN
 	('reinforce_cultists_preacher_ictus_z1_wave_1', 0, 0, 0, 0, 'Attalica Cultists Reinforcement Wave 1', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
 
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_1')
+
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
 IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'reinforce_cultists_z1_cultist_martyr_termis_wave_1')
@@ -2363,6 +2413,7 @@ BEGIN
 	(2, @flockid, 0.5, @presenceid, NULL)
 END
 
+/*
 -- Ictus wave 2
 
 IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_2' AND spawnid = 10)
@@ -2370,6 +2421,8 @@ BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
 	('reinforce_cultists_preacher_ictus_z1_wave_2', 0, 0, 0, 0, 'Attalica Cultists Reinforcement Wave 2', 10, 1, 0, 0, 9, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, NULL, NULL)
 END
+
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_2')
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_martyr_termis')
 
@@ -2386,6 +2439,7 @@ BEGIN
 	INSERT INTO npcreinforcements (reinforcementType, targetId, threshold, presenceId, zoneId) VALUES
 	(2, @flockid, 0.75, @presenceid, NULL)
 END
+*/
 
 GO
 

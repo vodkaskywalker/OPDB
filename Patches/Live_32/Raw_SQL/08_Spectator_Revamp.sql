@@ -5849,7 +5849,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_tactical_remote_controller')
@@ -5860,7 +5860,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_tactical_remote_controller')
@@ -5871,7 +5871,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_tactical_remote_controller')
@@ -5882,7 +5882,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 ---- Accumulator usage
@@ -6231,7 +6231,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_industrial_remote_controller')
@@ -6242,7 +6242,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_industrial_remote_controller')
@@ -6253,7 +6253,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_industrial_remote_controller')
@@ -6264,7 +6264,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 ---- Accumulator usage
@@ -6613,7 +6613,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_support_remote_controller')
@@ -6624,7 +6624,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_support_remote_controller')
@@ -6635,7 +6635,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_support_remote_controller')
@@ -6646,7 +6646,7 @@ BEGIN
 END
 ELSE
 BEGIN
-	UPDATE aggregatevalues SET value = 5 WHERE definition = @definition AND field = @field
+	UPDATE aggregatevalues SET value = 0 WHERE definition = @definition AND field = @field
 END
 
 ---- Accumulator usage
@@ -7216,8 +7216,8 @@ END
 
 -- long range
 
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier_modifier')
+SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier')
+SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier_modifier')
 
 IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
 BEGIN
@@ -7264,8 +7264,8 @@ END
 
 -- long range
 
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier_modifier')
+SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier')
+SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier_modifier')
 
 IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
 BEGIN
@@ -7547,224 +7547,6 @@ END
 ELSE
 BEGIN
 	UPDATE extensions SET bonus = -0.03 WHERE extensionname = 'ext_drone_amplification_accuracy'
-END
-
-GO
-
----- Link base value with modifier via category flag
-
-DECLARE @category INT
-DECLARE @base INT
-DECLARE @modifier INT
-
--- assault remote controllers
-
--- damage
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_assault_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_damage_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_damage_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- cycle
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_assault_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- long range
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_assault_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- Accuracy
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_assault_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_accuracy_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_accuracy_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- tactical remote controllers
-
--- damage
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_tactical_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_damage_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_damage_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- cycle
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_tactical_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_cycle_time_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- long range
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_tactical_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_long_range_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- Accuracy
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_tactical_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_accuracy_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_accuracy_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- industrial remote controllers
-
--- mining amount
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_industrial_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_mining_amount_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_mining_amount_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- harvesting amount
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_industrial_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_harvesting_amount_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_harvesting_amount_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- support remote controllers
-
--- remote repair amount
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_support_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_remote_repair_amount_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_remote_repair_amount_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- cycle
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_remote_repair_cycle_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_remote_repair_cycle_time_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- all remote controllers
-
--- locking time
-
-SET @category = (SELECT TOP 1 value FROM categoryFlags WHERE name = 'cf_remote_controllers')
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_locking_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_locking_time_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- armor max
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_armor_max_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_armor_max_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- core max
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_core_max_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_core_max_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
-END
-
--- core recharge time
-
-SET @base = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_core_recharge_time_modifier')
-SET @modifier = (SELECT TOP 1 id FROM aggregatefields WHERE name = 'drone_amplification_core_recharge_time_modifier_modifier')
-
-IF NOT EXISTS (SELECT 1 FROM [modulepropertymodifiers] WHERE categoryflags = @category AND baseField = @base AND modifierField = @modifier)
-BEGIN
-	INSERT INTO [modulepropertymodifiers] (categoryflags, baseField, modifierField) VALUES
-	(@category, @base, @modifier)
 END
 
 GO
