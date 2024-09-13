@@ -439,48 +439,4 @@ UPDATE aggregatevalues SET value = 50 WHERE definition = @definition AND field =
 
 GO
 
-/*
----- Disable extra reinvorcement waves
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z6_wave_2' AND spawnid = 10
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z6_wave_2' AND spawnid = 10
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z6_wave_2' AND spawnid = 10
-
---
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z1_wave_2' AND spawnid = 10
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z1_wave_2' AND spawnid = 10
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z1_wave_2' AND spawnid = 10
-
---
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_vagabond_z7_wave_2' AND spawnid = 10
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_zenith_z7_wave_2' AND spawnid = 10
-
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_0' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_1' AND spawnid = 10
-UPDATE npcpresence SET enabled = 1 WHERE name = 'reinforce_cultists_preacher_ictus_z7_wave_2' AND spawnid = 10
-*/
-
 GO
