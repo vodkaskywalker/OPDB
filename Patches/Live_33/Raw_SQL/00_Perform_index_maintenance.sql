@@ -1,0 +1,3 @@
+EXEC dbo.indexesMaintenance
+
+GO
