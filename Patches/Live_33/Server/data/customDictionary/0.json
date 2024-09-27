@@ -2818,6 +2818,8 @@
 	"drone_amplification_speed_max_modifier_unit": "%",
 	"Aggregate_unknown_719": "Drones reactor stability modifier",
 	"drone_amplification_reactor_radiation_modifier_unit": "%",
+        "def_paint_maroon_dark":"RobotPaint: Dark Maroon",
+	"def_paint_maroon_dark_desc":"RobotPaint!\n\nHow to use:\n\nDrag this item into the robot cargo you wish to paint. Right-click, '''Activate'''.  Undock or refresh the Equip Window to see the change!",
 	"base_ASI": "Valhalla",
 	"effect_gods_bless": "Gods Bless",
 	"ArtifactType_unknown_387": "Network Breach I",
