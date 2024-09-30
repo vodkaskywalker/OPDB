@@ -64,7 +64,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 100, NULL, 100000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 2500, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 2500, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_small_armor_repairer')
@@ -72,7 +76,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 500, NULL, 1000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -82,7 +90,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 1000, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 2500, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 2500, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_medium_armor_repairer')
@@ -90,7 +102,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -100,7 +116,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 100, NULL, NULL, 100000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 2500, NULL, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 2500, icscoin = NULL, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_small_shield_generator')
@@ -108,7 +128,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 500, NULL, NULL, 1000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 5000, icscoin = NULL, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -118,7 +142,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 1000, NULL, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 2500, NULL, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 2500, icscoin = NULL, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_medium_shield_generator')
@@ -126,7 +154,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 2500, NULL, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 5000, icscoin = NULL, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -136,7 +168,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_sensor_booster')
@@ -144,7 +180,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -154,7 +194,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_webber')
@@ -162,7 +206,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -172,7 +220,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_eccm')
@@ -180,7 +232,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -190,7 +246,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_small_core_booster')
@@ -198,7 +258,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -208,7 +272,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 1000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_medium_core_booster')
@@ -216,7 +284,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -226,7 +298,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_70_tracking_upgrade')
@@ -234,7 +310,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -244,7 +324,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 100, NULL, 1000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 2500, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 2500, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_72_small_armor_repairer')
@@ -252,7 +336,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 500, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -262,7 +350,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 1000, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 2500, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 2500, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_72_medium_armor_repairer')
@@ -270,7 +362,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -280,7 +376,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 100, NULL, NULL, 1000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 2500, NULL, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 2500, icscoin = NULL, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_71_small_shield_generator')
@@ -288,7 +388,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 500, NULL, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 5000, icscoin = NULL, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -298,7 +402,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 1000, NULL, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 2500, NULL, NULL, 750000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 2500, icscoin = NULL, asicoin = NULL, credit = 750000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_71_medium_shield_generator')
@@ -306,7 +414,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 5000, icscoin = NULL, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -316,7 +428,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_71_mining_probe_module')
@@ -324,7 +440,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -334,7 +454,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_72_damage_mod_projectile')
@@ -342,7 +466,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -352,7 +480,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_72_mass_reductor')
@@ -360,7 +492,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -370,7 +506,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000, 100, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 500000000, 10000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 500000000, unicoin = 10000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_elitet4_71_maneuvering_upgrade')
@@ -378,7 +518,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -388,7 +532,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -398,7 +546,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -408,7 +560,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -418,7 +574,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, 500, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, 5000, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = 5000, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -428,7 +588,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, 5000, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, 5000, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = 5000, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -438,7 +602,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, 5000, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, 5000, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = 5000, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -448,7 +616,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 500, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -458,7 +630,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -468,7 +644,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, 5000, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 5000, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -478,7 +658,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 500, NULL, NULL, 10000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 5000, icscoin = NULL, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -488,7 +672,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 100000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 5000, NULL, NULL, 1500000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 5000, icscoin = NULL, asicoin = NULL, credit = 1500000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -498,7 +686,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -508,7 +700,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -518,7 +714,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 10000000, 500, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -528,7 +728,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -538,7 +742,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -548,7 +756,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 100000000, 5000, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, NULL, NULL, NULL, 1000000000, 25000, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = NULL, credit = 1000000000, unicoin = 25000  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -558,7 +770,11 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND presetid = @itemshop_preset)
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
-	(@itemshop_preset, @definition, 1, 50000, NULL, NULL, 5000000000, NULL, NULL, 0, NULL)
+	(@itemshop_preset, @definition, 1, 20000, NULL, NULL, 5000000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = 20000, icscoin = NULL, asicoin = NULL, credit = 5000000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 --
@@ -570,6 +786,10 @@ BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
 	(@itemshop_preset, @definition, 1, NULL, NULL, 50000, 5000000000, NULL, NULL, 0, NULL)
 END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = NULL, asicoin = 20000, credit = 5000000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
+END
 
 --
 
@@ -579,6 +799,10 @@ IF NOT EXISTS (SELECT 1 FROM itemshop WHERE targetdefinition = @definition AND p
 BEGIN
 	INSERT INTO itemshop (presetid, targetdefinition, targetamount, tmcoin, icscoin, asicoin, credit, unicoin, globallimit, purchasecount, standing) VALUES
 	(@itemshop_preset, @definition, 1, NULL, 50000, NULL, 5000000000, NULL, NULL, 0, NULL)
+END
+ELSE
+BEGIN
+	UPDATE itemshop SET tmcoin = NULL, icscoin = 20000, asicoin = NULL, credit = 5000000000, unicoin = NULL  WHERE targetdefinition = @definition AND presetid = @itemshop_preset
 END
 
 GO
