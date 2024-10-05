@@ -403,8 +403,7 @@ INSERT INTO @tempTable (definition, componentdefinition, componentamount) VALUES
 (@definition, @chollonin, 25),
 (@definition, @isopropentol, 65),
 (@definition, @vitricyl, 25),
-(@definition, @t1_adaptive_alloy, 1),
-(@definition, @common_basic_components, 30)
+(@definition, @t1_adaptive_alloy, 1)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_adaptive_alloy')
 INSERT INTO @tempTable (definition, componentdefinition, componentamount) VALUES
@@ -419,9 +418,7 @@ INSERT INTO @tempTable (definition, componentdefinition, componentamount) VALUES
 (@definition, @vitricyl, 25),
 (@definition, @alligior, 250),
 (@definition, @espitium, 100),
-(@definition, @t2_adaptive_alloy, 1),
-(@definition, @common_basic_components, 20),
-(@definition, @common_advanced_components, 20)
+(@definition, @t2_adaptive_alloy, 1)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_adaptive_alloy')
 INSERT INTO @tempTable (definition, componentdefinition, componentamount) VALUES
@@ -436,10 +433,7 @@ INSERT INTO @tempTable (definition, componentdefinition, componentamount) VALUES
 (@definition, @vitricyl, 50),
 (@definition, @alligior, 500),
 (@definition, @espitium, 200),
-(@definition, @t3_adaptive_alloy, 1),
-(@definition, @common_basic_components, 15),
-(@definition, @common_advanced_components, 30),
-(@definition, @common_expert_components, 45)
+(@definition, @t3_adaptive_alloy, 1)
 
 -- Prototypes --
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_adaptive_alloy_pr')
