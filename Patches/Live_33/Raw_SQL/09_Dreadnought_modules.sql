@@ -941,7 +941,7 @@ GO
 -- Add slots to combat destroyers
 
 UPDATE entitydefaults SET options = '#height=f0.2#slotFlags=4908,8,8,8,8' WHERE definitionname = 'def_onyx_bot_head'
-UPDATE entitydefaults SET options = '#height=f0.2#slotFlags=49088,8,8,8,8' WHERE definitionname = 'def_hydra_bot_head'
+UPDATE entitydefaults SET options = '#height=f0.2#slotFlags=4908,8,8,8,8' WHERE definitionname = 'def_hydra_bot_head'
 UPDATE entitydefaults SET options = '#height=f0.2#slotFlags=4908,8,8,8,8' WHERE definitionname = 'def_felos_bot_head'
 
 GO
