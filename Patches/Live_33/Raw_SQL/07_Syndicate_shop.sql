@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Spark Teleport Devices ----
 DECLARE @categoryFlags INT
 DECLARE @options VARCHAR(MAX)

@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 DECLARE @targetDefinition INT
 DECLARE @spawnid INT
 DECLARE @presenceid INT

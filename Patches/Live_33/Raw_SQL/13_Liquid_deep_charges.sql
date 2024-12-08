@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Add deep mining charges
 
 DECLARE @categoryFlags INT

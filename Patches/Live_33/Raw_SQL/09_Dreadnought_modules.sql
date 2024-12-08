@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Create new categories for siege modules
 
 IF NOT EXISTS (SELECT 1 FROM categoryFlags WHERE name = 'cf_robot_enhancements')

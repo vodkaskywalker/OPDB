@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 DECLARE @extension INT
 DECLARE @definition INT
 
@@ -50,48 +54,48 @@ SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionn
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_large_driller')
 
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named1_large_driller_pr')
 
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_large_driller')
 
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_large_driller_pr')
 
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_large_driller')
 
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named3_large_driller_pr')
 
 DELETE FROM enablerextensions WHERE definition = @definition
 
 INSERT INTO enablerextensions (definition, extensionid, extensionlevel) VALUES
-(@definition, @extension, 5)
+(@definition, @extension, 8)
 
 GO

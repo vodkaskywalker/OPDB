@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Create Daoden entrance
 
 DECLARE @zoneId INT

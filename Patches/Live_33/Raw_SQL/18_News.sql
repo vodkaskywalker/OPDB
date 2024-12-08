@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 INSERT INTO news (title, body, ntime, type, language) VALUES (
 'Urgent: Mission Briefing on Daoden',
 'To: All Syndicate Agents

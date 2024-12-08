@@ -2687,7 +2687,6 @@
 	"def_named3_industrial_remote_controller_cprg": "Reeve v2.67 industrial remote controller CT",
 	"def_standard_industrial_remote_controller_desc": "Industrial remote controllers are unique launchers that can deploy and control limited amount of remote controlled units. Can be installed on Riveler, Symbiont.",
 	"def_standard_support_remote_controller": "Standard support remote controller",
-	"def_standard_industrial_remote_controller_cprg": "Standard industrial remote controller CT",
 	"def_named1_support_remote_controller": "Physician v2.63 support remote controller",
 	"def_named1_support_remote_controller_pr": "Physician v2.63 support remote controller prototype",
 	"def_named1_support_remote_controller_cprg": "Physician v2.63 support remote controller CT",
@@ -3039,7 +3038,7 @@
 	"cf_excavator_modules": "Excavator modules",
 	"def_standard_excavator_module": "Standard excavator module",
 	"def_excavator_module_desc": "A mining-optimized module for Destroyer-class industrial robots, the Excavator Module enhances resource extraction for both itself and nearby allied units. It boosts mining output, with each mining action generating reactor overheat. As overheat builds, the robot's mining efficiency increases, allowing for even greater resource yields. Overheat dissipates naturally over time, offering a balance of risk and reward: carefully managed overheat grants significant mining performance, but if left unchecked, the reactor may explode, taking the robot down with it. Efficiency and caution are the keys to mastering this module.",
-	"def_standard_excavator_module_cprg": "Standard dreadnought module CT",
+	"def_standard_excavator_module_cprg": "Standard excavator module CT",
 	"def_named1_excavator_module": "Advanced excavator module",
 	"def_named1_excavator_module_cprg": "Advanced excavator module CT",
 	"def_named1_excavator_module_pr": "Advanced excavator module prototype",
@@ -3065,5 +3064,6 @@
 	"def_ammo_mining_deep_liquizit": "Deep miner charge (liquizit)",
 	"def_ammo_mining_deep_liquizit_pr": "Deep miner charge (liquizit) prototype",
 	"def_ammo_mining_deep_liquizit_cprg": "Deep miner charge (liquizit) CT",
+	"cannot_leave_channel": "You cannot leave this channel",
 }
 

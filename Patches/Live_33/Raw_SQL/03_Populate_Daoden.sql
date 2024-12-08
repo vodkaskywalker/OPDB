@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Nuimqol
 
 -- Create and fill new npc

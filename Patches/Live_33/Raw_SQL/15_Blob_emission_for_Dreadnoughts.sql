@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 -- Add dreadnought effect fields
 
 IF NOT EXISTS (SELECT 1 FROM aggregatefields WHERE name = 'effect_dreadnought_blob_emission_modifier')

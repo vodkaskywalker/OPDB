@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 -- Reenabling, repositioning Daoden and making it PvP
 
 UPDATE zones SET enabled = 1, active = 1, protected = 0, raceid = 1, x = -20000, y = -1000 WHERE name = 'zone_ASI'

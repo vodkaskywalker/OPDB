@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Add new category for Adaptive Alloys ----
 
 IF NOT EXISTS (SELECT 1 FROM categoryFlags WHERE name = 'cf_adaptive_alloys')
@@ -315,7 +319,11 @@ GO
 IF NOT EXISTS (SELECT 1 FROM effects WHERE name = 'effect_adaptive_alloy')
 BEGIN
 	INSERT INTO effects (effectcategory, duration, name, description, note, isaura, auraradius, ispositive, display, saveable) VALUES
-	(8, 2000, 'effect_adaptive_alloy', 'effect_adaptive_alloy_desc', 'Adaptive alloy', 0, 0, 1, 1, 0)
+	(8, 0, 'effect_adaptive_alloy', 'effect_adaptive_alloy_desc', 'Adaptive alloy', 0, 0, 1, 1, 0)
+END
+ELSE
+BEGIN
+	UPDATE effects SET duration = 0 WHERE name = 'effect_adaptive_alloy'
 END
 
 GO
@@ -513,7 +521,7 @@ INSERT INTO @tempTable (definition, researchlevel, calibrationprogram, enabled) 
 (@definition, 4, @calibration, 1)
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_adaptive_alloy_pr')
-SET @calibration = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_landmine_detector_cprg')
+SET @calibration = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_named2_adaptive_alloy_cprg')
 INSERT INTO @tempTable (definition, researchlevel, calibrationprogram, enabled) VALUES
 (@definition, 5, @calibration, 1)
 

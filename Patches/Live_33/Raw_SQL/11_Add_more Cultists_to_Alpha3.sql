@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 -- Add roamers for Tellesis
 
 DECLARE @spawnid INT

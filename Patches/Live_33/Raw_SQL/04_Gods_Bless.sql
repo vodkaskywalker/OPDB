@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 -- Add effect
 
 DECLARE @effectCatName BIGINT

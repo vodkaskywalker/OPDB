@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 -- Small QoL for riveler mk2 pilots would be increase the range of the base locking range, add an additional amount of targets they can lock (to account for the drones) and buff the range on t4+ miners.
 
 USE perpetuumsa

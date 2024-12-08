@@ -1,3 +1,7 @@
+USE perpetuumsa
+
+GO
+
 ---- Add new ores
 
 ---- Deeptanium (no use)
