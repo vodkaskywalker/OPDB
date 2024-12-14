@@ -274,29 +274,33 @@ DECLARE @presenceid INT
 DECLARE @definition INT
 DECLARE @templateid INT
 
-SET @spawnid = (SELECT TOP 1 spawnid FROM zones WHERE name = 'zone_ICS_pve')
+SET @spawnid = (SELECT TOP 1 spawnid FROM zones WHERE name = 'zone_TM_pve')
 
 --- roamers 1
 
-IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'roamer_cultist_seekers_z6' AND spawnid = @spawnid)
+IF NOT EXISTS (SELECT 1 FROM npcpresence WHERE name = 'roamer_cultist_seekers_z8' AND spawnid = @spawnid)
 BEGIN
 	INSERT INTO npcpresence (name, topx, topy, bottomx, bottomy, note, spawnid, enabled, roaming, roamingrespawnseconds, presencetype, maxrandomflock, randomcenterx, randomcentery, randomradius, dynamiclifetime, isbodypull, isrespawnallowed, safebodypull, izgroupid, growthseconds) VALUES
-	('roamer_cultist_seekers_z6', 10, 10, 2038, 2038, 'Tellesis Cultists', @spawnid, 1, 1, 7200, 13, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, NULL)
+	('roamer_cultist_seekers_z8', 10, 10, 2038, 2038, 'Hershfield Cultists', @spawnid, 1, 1, 7200, 13, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, NULL)
 END
 ELSE BEGIN
-	UPDATE npcpresence SET enabled = 1 WHERE name = 'roamer_cultist_seekers_z6'
+	UPDATE npcpresence SET enabled = 1 WHERE name = 'roamer_cultist_seekers_z8'
 END
 
-SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'roamer_cultist_seekers_z6')
+SET @presenceid = (SELECT TOP 1 id FROM npcpresence WHERE name = 'roamer_cultist_seekers_z8')
 
 ----
 
 SET @definition = (SELECT TOP 1 definition FROM entitydefaults WHERE definitionname = 'def_npc_cultist_seeker_yagel')
 
-IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultist_seekers_z6_cultist_seeker_yagel')
+IF NOT EXISTS (SELECT 1 FROM npcflock WHERE name = 'roamer_cultist_seekers_z8_cultist_seeker_yagel')
 BEGIN
 INSERT INTO npcflock ([name], presenceid, flockmembercount, [definition], spawnoriginX, spawnoriginY, spawnrangeMin, spawnrangeMax, respawnseconds, totalspawncount, homerange, note, respawnmultiplierlow, [enabled], iscallforhelp, behaviorType, npcSpecialType) VALUES
-	('roamer_cultist_seekers_z6_cultist_seeker_yagel', @presenceid, 1, @definition, 0, 0, 0, 10, 7200, 0, 50, 'tellesis cultists', 0.9, 1, 1, 2, 0)
+	('roamer_cultist_seekers_z8_cultist_seeker_yagel', @presenceid, 1, @definition, 0, 0, 0, 10, 7200, 0, 50, 'hershfield cultists', 0.9, 1, 1, 1, 0)
+END
+ELSE
+BEGIN
+	UPDATE npcflock SET behaviorType = 1 WHERE name = 'roamer_cultist_seekers_z8_cultist_seeker_yagel'
 END
 
 GO
